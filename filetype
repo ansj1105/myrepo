@@ -1,0 +1,19 @@
+#!/bin/sh
+x=$1
+if [ -L $x ];then
+	echo $x는 심볼릭 링크입니다.
+elif [ -b $x ];then
+	echo $x은 블록 장치 파일입니다.
+elif [ -c $x ]; then
+	echo $x은 문자 장치 파일입니다.
+elif [ -d $x ]; then
+	echo $x은 디렉토리 입니다.
+elif [ -f $x ]; then
+	echo $x은 보통 파일입니다.
+elif [ -p $x ]; then
+	echo $x는 파이프 파일입니다.
+elif [ -s $x ]; then
+	echo $x는 소켓 파일입니다.
+else
+	echo $x은(는) 존재x
+fi
